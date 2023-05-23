@@ -3,21 +3,31 @@ var menu = document.querySelector(".menu");
 var Btn = document.querySelector(".main a img");
 var header = document.querySelector(".head");
 var header1 = document.querySelector(".head0");
+var select = document.querySelector(".select3");
+var adresse = document.querySelector(".contact-adresse");
+var adresseSec = document.querySelector(".contact-adresseSec");
+
 let width = screen.width;
+
+// selectAgenceDeSh.addEventListener("change", function add() {
+//   adresse.classList.toggle("contact-adresse1");
+// });
 
 Btn.addEventListener("click", function add() {
   var toggle = menu.classList.toggle("c1");
 
   if (width <= 500) {
     menu.style.marginTop = "57px";
-    header.style.marginBottom = "-89px";
+
+    // header.style.marginBottom = "-89px";
 
     if (toggle == false) {
-      header.style.marginBottom = "-366px";
+      // header.style.marginBottom = "-366px";
+      // landingPage.style.marginTop = "0px";
     }
 
     //console.log(width);
-  } else if (width <= 780) {
+  } else if (width > 500 || width <= 780) {
     header.style.height = "360px";
     header1.style.height = "119px";
 
@@ -28,6 +38,21 @@ Btn.addEventListener("click", function add() {
     //console.log(width);
   }
 });
+
+if (select) {
+  select.addEventListener("change", function add() {
+    if (this.value == 1) {
+      adresseSec.style.display = "none";
+      adresse.style.display = "block";
+    } else if (this.value == 2) {
+      adresse.style.display = "none";
+      adresseSec.style.display = "block";
+    } else {
+      adresseSec.style.display = "none";
+      adresse.style.display = "none";
+    }
+  });
+}
 
 /***************  Prestation image animation **************/
 
